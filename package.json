@@ -62,7 +62,8 @@
     "treeshake": "node scripts/check-treeshake.mjs",
     "prepublishOnly": "npm run typecheck && npm run test && npm run build && npm run size && npm run treeshake",
     "build:site": "node scripts/build-site.mjs",
-    "demo:gif": "npm run build:site && node scripts/capture-demo.mjs"
+    "demo:gif": "npm run build:site && node scripts/capture-demo.mjs",
+    "demo:cover": "node scripts/build-cover.mjs"
   },
   "size-limit": [
     {
