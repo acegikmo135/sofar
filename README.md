@@ -13,7 +13,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/sofar-json"><img alt="npm version" src="https://img.shields.io/npm/v/sofar-json?style=flat-square&color=146C5E&label=npm"></a>
-  <a href="https://bundlephobia.com/package/sofar-json"><img alt="bundle size" src="https://img.shields.io/badge/size-425%20B%20gzipped-146C5E?style=flat-square"></a>
+  <a href="https://bundlephobia.com/package/sofar-json"><img alt="bundle size" src="https://img.shields.io/badge/size-459%20B%20gzipped-146C5E?style=flat-square"></a>
   <a href="https://github.com/acegikmo135/sofar/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/acegikmo135/sofar/ci.yml?style=flat-square&label=CI"></a>
   <img alt="zero dependencies" src="https://img.shields.io/badge/dependencies-0-146C5E?style=flat-square">
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-strict-146C5E?style=flat-square">
@@ -67,7 +67,7 @@ It never invents structure that isn't in the buffer, and it never throws. You ge
 
 | | |
 |---|---|
-| **425 bytes** | Gzipped, full ESM build. Smaller than most SVG icons. |
+| **459 bytes** | Gzipped, full ESM build. Smaller than most SVG icons. |
 | **Zero dependencies** | Nothing but `JSON.parse`. Runs in Node 18+, Deno, Bun, browsers, and edge runtimes. |
 | **Never throws** | Garbage in → `undefined` out. Wrap nothing in try/catch. |
 | **Single pass, O(n)** | One scan, no backtracking rescans. ~1.3× the cost of a bare `JSON.parse` on a 1.6 MB buffer. |
@@ -326,7 +326,7 @@ Measured on 2026-09-18 with esbuild (`--bundle --minify`) + gzip -9, then probed
 
 | | **SoFar** | `partial-json` 0.1.7 | `best-effort-json-parser` 1.5.1 | `jsonrepair` 3.15.0 |
 |---|:---:|:---:|:---:|:---:|
-| Gzipped size | **425 B** | 1 611 B | 1 880 B | 3 681 B |
+| Gzipped size | **459 B** | 1 611 B | 1 880 B | 3 681 B |
 | Runtime dependencies | **0** | 0 | 0 | 0 |
 | `''` (empty) | `undefined` | **throws** | `""` | **throws** |
 | `}}}` (garbage) | `undefined` | **throws** | returns the string `"}}}"` | **throws** |

@@ -6,7 +6,7 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  minify: true,
+  minify: false,
   treeshake: true,
   target: "es2020",
   outExtension({ format }) {

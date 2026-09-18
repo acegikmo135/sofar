@@ -11,6 +11,9 @@ All notable changes to this project are documented here. The format follows
 - README demo is now a recorded GIF of the live playground (`assets/demo.gif`). The
   older `assets/demo.svg` is kept so the 0.1.0 README on npm keeps rendering.
 - Added social cover image (`assets/cover.png`).
+- `dist/` is no longer pre-minified: shipped code is readable and reviewable, and
+  consumers' bundlers minify it anyway (459 B gzipped after minification).
+- Releases are published from GitHub Actions with npm provenance.
 
 ## [0.1.0] - 2026-09-18
 
