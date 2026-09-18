@@ -12,8 +12,8 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/sofar"><img alt="npm version" src="https://img.shields.io/npm/v/sofar?style=flat-square&color=146C5E&label=npm"></a>
-  <a href="https://bundlephobia.com/package/sofar"><img alt="bundle size" src="https://img.shields.io/badge/size-425%20B%20gzipped-146C5E?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/sofar-json"><img alt="npm version" src="https://img.shields.io/npm/v/sofar-json?style=flat-square&color=146C5E&label=npm"></a>
+  <a href="https://bundlephobia.com/package/sofar-json"><img alt="bundle size" src="https://img.shields.io/badge/size-425%20B%20gzipped-146C5E?style=flat-square"></a>
   <a href="https://github.com/acegikmo135/sofar/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/acegikmo135/sofar/ci.yml?style=flat-square&label=CI"></a>
   <img alt="zero dependencies" src="https://img.shields.io/badge/dependencies-0-146C5E?style=flat-square">
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-strict-146C5E?style=flat-square">
@@ -52,7 +52,7 @@ When you stream structured output from a model, your handler sees the document o
 **SoFar** turns each prefix into the best value that can be honestly derived from it:
 
 ```ts
-import { parsePartialJSON } from "sofar";
+import { parsePartialJSON } from "sofar-json";
 
 parsePartialJSON('{"title": "Pad Th');                                // { title: "Pad Th" }
 parsePartialJSON('{"title": "Pad Thai", "ingr');                      // { title: "Pad Thai" }
@@ -80,11 +80,11 @@ It never invents structure that isn't in the buffer, and it never throws. You ge
 ## Quick start
 
 ```sh
-npm install sofar
+npm install sofar-json
 ```
 
 ```ts
-import { createJSONStream } from "sofar";
+import { createJSONStream } from "sofar-json";
 
 const stream = createJSONStream();
 
@@ -147,7 +147,7 @@ stream.raw;                           // '{"title": "Pad Thai", "servings": 4}'
 <summary><b>fetch + ReadableStream</b></summary>
 
 ```ts
-import { createJSONStream } from "sofar";
+import { createJSONStream } from "sofar-json";
 
 async function streamRecipe(prompt: string, onUpdate: (value: unknown) => void) {
   const res = await fetch("/api/recipe", { method: "POST", body: JSON.stringify({ prompt }) });
@@ -174,7 +174,7 @@ async function streamRecipe(prompt: string, onUpdate: (value: unknown) => void) 
 
 ```ts
 import OpenAI from "openai";
-import { createJSONStream } from "sofar";
+import { createJSONStream } from "sofar-json";
 
 const openai = new OpenAI();
 const stream = createJSONStream();
@@ -198,7 +198,7 @@ for await (const part of completion) {
 
 ```ts
 import Anthropic from "@anthropic-ai/sdk";
-import { createJSONStream } from "sofar";
+import { createJSONStream } from "sofar-json";
 
 const client = new Anthropic();
 const stream = createJSONStream();
@@ -218,7 +218,7 @@ events.on("text", (delta) => render(stream.feed(delta)));
 
 ```ts
 import { streamText } from "ai";
-import { createJSONStream } from "sofar";
+import { createJSONStream } from "sofar-json";
 
 const { textStream } = await streamText({ model, prompt });
 const stream = createJSONStream();
@@ -234,7 +234,7 @@ for await (const delta of textStream) {
 
 ```tsx
 import { useState } from "react";
-import { createJSONStream } from "sofar";
+import { createJSONStream } from "sofar-json";
 
 function Recipe({ prompt }: { prompt: string }) {
   const [data, setData] = useState<unknown>();

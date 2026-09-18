@@ -1,5 +1,5 @@
 {
-  "name": "sofar",
+  "name": "sofar-json",
   "version": "0.1.0",
   "description": "Parse JSON while an LLM is still streaming it. Repairs incomplete JSON into the best value so far. Zero dependencies, 425 bytes.",
   "keywords": [

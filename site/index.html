@@ -490,7 +490,7 @@
       <a href="#demo" data-spy="demo">Demo</a>
       <a href="#docs" data-spy="docs">Docs</a>
       <a class="hide-sm" href="#how" data-spy="how">How it works</a>
-      <a class="ext hide-sm" href="https://www.npmjs.com/package/sofar" target="_blank" rel="noopener">npm<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ext hide-sm" href="https://www.npmjs.com/package/sofar-json" target="_blank" rel="noopener">npm<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a class="ext" href="https://github.com/acegikmo135/sofar" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <button class="theme-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
         <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
@@ -509,7 +509,7 @@
         <p class="lede load" style="--i:2">An LLM streams JSON one token at a time, and <code>JSON.parse</code> throws on every prefix until the last brace. <strong>SoFar</strong> repairs what has arrived so far into the best value it honestly supports — on every chunk, in one pass, without ever throwing.</p>
         <div class="install load" style="--i:3" role="group" aria-label="Install command">
           <span class="ps" aria-hidden="true">$</span>
-          <span class="cmd" id="install-cmd">npm install sofar</span>
+          <span class="cmd" id="install-cmd">npm install sofar-json</span>
           <button class="btn-icon" id="copy-install" type="button" aria-label="Copy install command" title="Copy">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3" stroke="currentColor" stroke-width="1.8"/></svg>
           </button>
@@ -645,11 +645,11 @@
         <article id="install" data-reveal>
           <h3>Install</h3>
           <p>ESM and CommonJS builds are both included, with bundled TypeScript declarations. No runtime dependencies. Works anywhere <code>JSON.parse</code> does: Node 18+, Deno, Bun, browsers, and edge runtimes.</p>
-          <pre class="code" data-lang="shell"><code class="lang-sh">npm install sofar
+          <pre class="code" data-lang="shell"><code class="lang-sh">npm install sofar-json
 # or
-pnpm add sofar
-yarn add sofar</code></pre>
-          <pre class="code" data-lang="typescript"><code class="lang-ts">import { parsePartialJSON, createJSONStream } from "sofar";</code></pre>
+pnpm add sofar-json
+yarn add sofar-json</code></pre>
+          <pre class="code" data-lang="typescript"><code class="lang-ts">import { parsePartialJSON, createJSONStream } from "sofar-json";</code></pre>
         </article>
 
         <article id="api-parse" data-reveal>
@@ -688,7 +688,7 @@ stream.raw;                           // '{"title": "Pad Thai", "servings": 4}'<
         <article id="example-fetch" data-reveal>
           <h3>fetch + ReadableStream</h3>
           <p>The most portable shape: read bytes off <code>response.body</code>, decode them with <code>{ stream: true }</code> so multi-byte characters split across chunks are handled, and feed each piece.</p>
-          <pre class="code" data-lang="typescript"><code class="lang-ts">import { createJSONStream } from "sofar";
+          <pre class="code" data-lang="typescript"><code class="lang-ts">import { createJSONStream } from "sofar-json";
 
 async function streamRecipe(prompt: string, onUpdate: (value: unknown) =&gt; void) {
   const res = await fetch("/api/recipe", {
@@ -766,7 +766,7 @@ async function streamRecipe(prompt: string, onUpdate: (value: unknown) =&gt; voi
   <div class="wrap foot">
     <span>SoFar · MIT © 2026 Manthan Kansagra</span>
     <span class="links">
-      <a href="https://www.npmjs.com/package/sofar" target="_blank" rel="noopener">npm</a>
+      <a href="https://www.npmjs.com/package/sofar-json" target="_blank" rel="noopener">npm</a>
       <a href="https://github.com/acegikmo135/sofar" target="_blank" rel="noopener">GitHub</a>
       <a href="https://github.com/acegikmo135/sofar/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
     </span>
