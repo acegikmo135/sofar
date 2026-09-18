@@ -35,5 +35,16 @@ jobs:
             echo "Tag v$TAG_VERSION does not match package.json version $PKG_VERSION" >&2
             exit 1
           fi
+      - name: Skip if this version is already on npm
+        id: check
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "sofar-json@$VERSION" version >/dev/null 2>&1; then
+            echo "sofar-json@$VERSION is already published — nothing to do."
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
       # prepublishOnly runs typecheck → test → build → size → treeshake first.
-      - run: npm publish --provenance --access public
+      - if: steps.check.outputs.publish == 'true'
+        run: npm publish --provenance --access public

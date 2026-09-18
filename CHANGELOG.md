@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] - 2026-09-18
+
+### Changed
+
+- `dist/` is no longer pre-minified: shipped code is readable and reviewable, and
+  consumers' bundlers minify it anyway (459 B gzipped after minification).
+- Releases are published from GitHub Actions with npm provenance.
+
 ## [0.1.1] - 2026-09-18
 
 ### Changed
@@ -11,9 +19,6 @@ All notable changes to this project are documented here. The format follows
 - README demo is now a recorded GIF of the live playground (`assets/demo.gif`). The
   older `assets/demo.svg` is kept so the 0.1.0 README on npm keeps rendering.
 - Added social cover image (`assets/cover.png`).
-- `dist/` is no longer pre-minified: shipped code is readable and reviewable, and
-  consumers' bundlers minify it anyway (459 B gzipped after minification).
-- Releases are published from GitHub Actions with npm provenance.
 
 ## [0.1.0] - 2026-09-18
 
@@ -32,5 +37,6 @@ All notable changes to this project are documented here. The format follows
 - `size-limit` budget of 2 kB gzipped, enforced in CI.
 - Tree-shaking verification script (`npm run treeshake`).
 
+[0.1.2]: https://github.com/acegikmo135/sofar/releases/tag/v0.1.2
 [0.1.1]: https://github.com/acegikmo135/sofar/releases/tag/v0.1.1
 [0.1.0]: https://github.com/acegikmo135/sofar/releases/tag/v0.1.0
