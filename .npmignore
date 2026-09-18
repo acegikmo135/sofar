@@ -1,0 +1,15 @@
+# Belt-and-braces: the "files" field in package.json already restricts the
+# tarball to dist/, but keep this so nothing from source or tests leaks
+# if that field is ever removed.
+src/
+test/
+scripts/
+.github/
+node_modules/
+coverage/
+*.tgz
+*.config.ts
+tsconfig.json
+.gitignore
+.npmignore
+.size-limit.json
