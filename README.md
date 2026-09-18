@@ -32,7 +32,7 @@
 <br>
 
 <p align="center">
-  <img src="assets/demo.svg" alt="A JSON document arriving token by token, with parsePartialJSON returning a valid value at every step" width="880">
+  <a href="https://acegikmo135.github.io/sofar/"><img src="assets/demo.gif" alt="A JSON document arriving token by token in a terminal, with parsePartialJSON returning a valid value at every step" width="621"></a>
 </p>
 
 <br>
